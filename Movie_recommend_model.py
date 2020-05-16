@@ -3,6 +3,7 @@ import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, render_template, jsonify
+import pickle
 pd.set_option('display.max_columns',None)
 
 trained_data= pd.read_csv('updated_cleaned_data.csv')
