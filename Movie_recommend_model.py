@@ -24,8 +24,8 @@ pd.set_option('display.max_columns',None)
 # # print(cleaned_data.loc[cleaned_data['movie_title']== 'avatar'].index[0]) # it will tell index of movie which is given
 
 
-trained_data= pd.read_csv(r'C:\Users\egoeshu\Desktop\testingdoc\Movie Recomender\updated_cleaned_data.csv')
-similarity_value= np.load(r'C:\Users\egoeshu\Desktop\testingdoc\Movie Recomender\similarity_matrix.npy')
+trained_data= pd.read_csv('updated_cleaned_data.csv')
+similarity_value= np.load('similarity_matrix.npy')
 
 #--- Simple way to understand below coding in deployment part
 a= np.array([9,8,7,6,5])
