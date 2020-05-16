@@ -7,7 +7,13 @@ import pickle
 pd.set_option('display.max_columns',None)
 
 trained_data= pd.read_csv('updated_cleaned_data.csv')
-similarity_value= np.load('similarity_matrix.npy', allow_pickle= True)
+
+cv= CountVectorizer()
+count_matrix= cv.fit_transform(cleaned_data['Combined']) #converting each word into vector
+# print(count_matrix) # sparse matrix
+
+similarity_value= cosine_similarity(count_matrix) # applying cosine similarity
+# print(similarity) # in array, showing the similarity 
 
 #--- Simple way to understand below coding in deployment part
 a= np.array([9,8,7,6,5])
