@@ -7,7 +7,7 @@ import pickle
 pd.set_option('display.max_columns',None)
 
 trained_data= pd.read_csv('updated_cleaned_data.csv')
-similarity_value= np.load('similarity_matrix.npy', allow_pickle= True)
+similarity_value= np.load('similarity_matrix.npy', 'rb', allow_pickle= True)
 
 #--- Simple way to understand below coding in deployment part
 a= np.array([9,8,7,6,5])
