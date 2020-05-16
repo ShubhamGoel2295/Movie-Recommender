@@ -5,25 +5,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, render_template, jsonify
 pd.set_option('display.max_columns',None)
 
-# cleaned_data= pd.read_csv(r'C:\Users\egoeshu\Desktop\testingdoc\Movie Recomender\cleaned_data.csv')
-# # print(cleaned_data.head())
-# cleaned_data['Combined']= cleaned_data['director_name']+ ' ' +cleaned_data['actor_1_name']+ ' '+cleaned_data['actor_2_name']+ ' ' +cleaned_data['actor_3_name']+ ' ' +cleaned_data['genres']+ ' '+cleaned_data['movie_title'] # joining all the datato apply countvectorizer
-# # print(cleaned_data['Combined'])
-#
-# cv= CountVectorizer()
-# count_matrix= cv.fit_transform(cleaned_data['Combined']) #converting each word into vector
-# # print(count_matrix) # sparse matrix
-#
-# similarity= cosine_similarity(count_matrix) # applying cosine similarity
-# # print(similarity) # in array, showing the similarity
-#
-# np.save(r'C:\Users\egoeshu\Desktop\testingdoc\Movie Recomender\similarity_matrix', similarity) # saving similarity matrix locally
-# cleaned_data.to_csv(r'C:\Users\egoeshu\Desktop\testingdoc\Movie Recomender\updated_cleaned_data.csv', index=False) #saving cleaned data
-
-# # print(cleaned_data['movie_title'].index[2]) # wll show index i.e 2
-# # print(cleaned_data.loc[cleaned_data['movie_title']== 'avatar'].index[0]) # it will tell index of movie which is given
-
-
 trained_data= pd.read_csv('updated_cleaned_data.csv')
 similarity_value= np.load('similarity_matrix.npy')
 
